@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1f2937;
+    --card-bg: #f5f7fa;
+    --border-color: #e5e7eb;
+    --primary-color: #2563eb;
+}
+
+:root {
+  --header-scroll-bg: rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme {
+  --header-scroll-bg: rgba(15, 23, 42, 0.75);
+}
+
+.dark-theme {
+    --bg-color: #0f172a;
+    --text-color: #e5e7eb;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --primary-color: #60a5fa;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 64px;
+        font-size: 14px;
+}

@@ -1,0 +1,31 @@
+<section class="hero" *ngIf="langService.translations$ | async as t">
+  <div class="hero-container">
+
+    <div class="hero-image">
+      <img src="/Harshad.jpeg" alt="Harshad" />
+    </div>
+    <div class="hero-content">
+
+      <h1>
+        {{ t.heroGreeting }}
+        <span class="highlight">{{ t.heroName }}</span>
+      </h1>
+
+      <h2 class="designation">
+        {{ t.heroDesignation }}
+      </h2>
+
+      <p class="intro">
+        {{ t.heroIntro }}
+      </p>
+
+      <div class="hero-buttons">
+        <a (click)="download()" class="btn primary">
+          {{ t.downloadResume }}
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>

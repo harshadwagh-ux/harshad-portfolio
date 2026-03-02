@@ -1,0 +1,140 @@
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+    border-bottom: 1px solid #e6e9ef;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding: 20px 20px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* LEFT */
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+.designation {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: var(--text-secondary);
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+.secondary {
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.secondary:hover {
+  background: var(--card-bg);
+}
+
+/* SOCIAL */
+.social a {
+  margin-right: 15px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.social a:hover {
+  color: var(--primary-color);
+}
+
+/* RIGHT IMAGE */
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 340px;
+    height: 400px;
+  border-radius: 2%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-image img {
+    width: 260px;
+    height: 300px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .designation {
+    font-size: 16px;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+}

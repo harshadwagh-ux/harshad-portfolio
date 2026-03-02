@@ -1,0 +1,40 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="logo" (click)="navigate('/home')">
+    <img src="/Home_icon.png" alt="Logo" title="Home" />
+  </div>
+  <nav class="desktop-nav" *ngIf="langService.translations$ | async as t">
+    <a (click)="scrollTo('home')">{{ t.home }}</a>
+    <a (click)="scrollTo('experience')">{{ t.experience }}</a>
+    <a (click)="scrollTo('skills')">{{ t.skills }}</a>
+    <a (click)="scrollTo('education')">{{ t.education }}</a>
+    <a href="https://harshad1702portfolio.netlify.app/" target="_blank">Old Portfolio</a>
+    <a (click)="scrollTo('contact')">{{ t.contact }}</a>
+  </nav>
+  <div class="actions">
+    <!-- <div class="lang-wrapper">
+      <select
+        class="lang-select"
+        [value]="currentLang"
+        (change)="setLanguage($event)"
+      >
+        <option value="en">English</option>
+        <option value="mr">मराठी</option>
+        <option value="hi">हिंदी</option>
+      </select>
+    </div> -->
+    <button class="theme-toggle" (click)="toggleDarkMode()">
+      {{ themeService.isDarkMode() ? day : night }}
+    </button>
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+  </div>
+</header>
+@if (menuOpen) {
+  <div class="mobile-overlay" (click)="toggleMenu()"></div>
+  <nav class="mobile-drawer" *ngIf="langService.translations$ | async as t">
+    <a (click)="scrollTo('home')">{{ t.home }}</a>
+    <a (click)="scrollTo('experience')">{{ t.experience }}</a>
+    <a (click)="scrollTo('skills')">{{ t.skills }}</a>
+    <a (click)="scrollTo('education')">{{ t.education }}</a>
+    <a (click)="scrollTo('contact')">{{ t.contact }}</a>
+  </nav>
+}

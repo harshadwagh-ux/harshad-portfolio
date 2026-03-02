@@ -1,0 +1,116 @@
+.education {
+  padding: 90px 20px;
+  border-bottom: 1px solid #e6e9ef;
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    // color: #2c3e50;
+  }
+
+  .education-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .education-card {
+    position: relative;
+    display: flex;
+    background: #f8f9fc;
+    border-radius: 14px;
+    padding: 25px 25px 25px 35px;
+    transition: 0.3s ease;
+    border: 1px solid #e6e9ef;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .left-border {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: var(--primary-color);
+      border-top-left-radius: 14px;
+      border-bottom-left-radius: 14px;
+    }
+
+    .education-content {
+      width: 100%;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0;
+        color: #34495e;
+      }
+
+      .badge {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+    }
+
+    .university {
+      font-weight: 500;
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+
+    .branch {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .college {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .duration {
+      font-size: 0.85rem;
+      color: #888;
+      font-weight: 500;
+    }
+  }
+
+  /* Responsive */
+
+  @media (max-width: 768px) {
+    padding: 70px 15px;
+
+    .education-card {
+      padding: 20px 20px 20px 30px;
+    }
+
+    .top-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+}

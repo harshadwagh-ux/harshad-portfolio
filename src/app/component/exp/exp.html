@@ -1,0 +1,32 @@
+<section class="experience-section">
+  <h2 class="section-title">Experience</h2>
+
+  <div class="total-exp">
+    Total Experience: <span>{{ totalExperience }}</span>
+  </div>
+
+  <div class="timeline">
+
+    <div
+      class="timeline-item"
+      *ngFor="let exp of experiences; let i = index"
+    >
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+        <h3>{{ exp.role }}</h3>
+
+        <h4>{{ exp.company }}</h4>
+
+        <p class="location">{{ exp.location }}</p>
+
+        <p class="duration">
+          {{ exp.start | date: 'MMM yyyy' }} -
+          {{ exp.end ? (exp.end | date: 'MMM yyyy') : 'Present' }}
+          ({{ getDuration(exp.start, exp.end) }})
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
