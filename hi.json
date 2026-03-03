@@ -1,0 +1,14 @@
+{
+  "home": "होम",
+  "education": "शिक्षा",
+  "skills": "कौशल",
+  "experience": "अनुभव",
+  "about": "मेरे बारे में",
+  "contact": "संपर्क",
+
+  "heroGreeting": "नमस्ते, मैं",
+  "heroName": "हर्षद वाघ",
+  "heroDesignation": "मैं Angular Development | Frontend Development | Full Stack Development में कार्यरत हूँ।",
+  "heroIntro": "मैं एक passionate Angular Developer हूँ और मुझे 4+ वर्षों का अनुभव है। Banking, Financial Services, Retail और Security domains में scalable और high-performance web applications को design और develop करने का मुझे अच्छा अनुभव है। Angular (latest versions), Angular Material, ng-Prime, RxJS, NgRx, Bootstrap और modern UI/UX practices का उपयोग करके responsive, user-friendly और modern applications बनाने में मैं specialize हूँ। साथ ही reusable component libraries, design systems, dynamic form builders और data-driven dashboards बनाकर productivity और application performance को improve करने में मेरी मजबूत expertise है। वर्तमान में मैं Reserve Bank Information Technology Private Limited में कार्यरत हूँ, जहाँ मैं RBI की विभिन्न applications के लिए enterprise-level Angular solutions design और develop कर रहा हूँ।",
+  "downloadResume": "रिज्यूमे डाउनलोड करें"
+}

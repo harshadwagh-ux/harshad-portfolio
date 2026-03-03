@@ -1,0 +1,20 @@
+{
+  "home": "Home",
+  "education": "Education",
+  "skills": "Skills",
+  "experience": "Experience",
+  "about": "About",
+  "contact": "Contact",
+
+  "heroGreeting": "Hi, I'm",
+  "heroName": "Harshad Wagh",
+  "heroDesignation": "I am into Angular Development | Frontend Development | Full Stack Development",
+  "heroIntro": "Passionate Angular Developer with 4+ years of experience in designing and building scalable, high-performance web applications across Banking, Financial Services, Retail, and Security domains. I specialize in developing modern, responsive, and user-friendly applications using Angular (latest versions), Angular Material, ng-Prime, RxJS, NgRx, Bootstrap, and advanced UI/UX practices, with strong expertise in creating reusable component libraries, design systems, dynamic form builders, and data-driven dashboards that improve productivity and application performance. Currently, I work with Reserve Bank Information Technology Private Limited, where I design enterprise-level Angular solutions used across multiple RBI applications.",
+  "downloadResume": "Download Resume",
+  "Texperience": {
+    "years": "Years",
+    "months": "Months",
+    "days": "Days",
+    "total": "Total Experience"
+  }
+}
