@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { Header } from "./component/header/header";
 import { Theme } from './service/core/theme';
 import { Home } from "./component/home/home";
@@ -20,5 +20,10 @@ export class App {
 
   ngOnInit() {
     this.themeService.initTheme();
+  }
+
+  @HostListener('document:contextmenu', ['$event'])
+  onRightClick(event: MouseEvent) {
+    event.preventDefault();
   }
 }
