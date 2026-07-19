@@ -79,7 +79,7 @@ export class Exp {
       months += 12;
     }
 
-    return `${years} Years ${months} Months ${days} Days`;
+    return `${years} Years ${months+1} Months ${days} Days`;
   }
 
   getDuration(start: Date, end: Date | null): string {
@@ -92,16 +92,14 @@ export class Exp {
     const years = Math.floor(months / 12);
     const remainingMonths = months % 12;
 
-    return `${years} yr ${remainingMonths} mo`;
+    return `${years} yr ${remainingMonths + 1} mo`;
   }
 
     calculateTotalExperience() {
     const first = this.experiences[this.experiences.length - 1].start;
     const now = new Date();
 
-    let months =
-      (now.getFullYear() - first.getFullYear()) * 12 +
-      (now.getMonth() - first.getMonth());
+    let months =(now.getFullYear() - first.getFullYear()) * 12 +(now.getMonth() - first.getMonth());
 
     const years = Math.floor(months / 12);
     const remainingMonths = months % 12;
