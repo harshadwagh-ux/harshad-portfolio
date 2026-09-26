@@ -1,28 +1,42 @@
 .skills {
-    padding: 20px 20px;
-  border-bottom: 1px solid #e6e9ef;
+  padding: 20px 20px 50px;
 
   .container {
     max-width: 1200px;
     margin: auto;
   }
 
-  .section-title {
+  .section-heading {
     text-align: center;
-    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+
+  .section-kicker {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #8cc7ff;
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 60px;
-    // color: #2c3e50;
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.04em;
   }
 
   .category {
-    margin-bottom: 60px;
+    margin-bottom: 44px;
   }
 
   .category-title {
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: var(--primary-color);
     position: relative;
   }
@@ -30,7 +44,7 @@
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 20px;
+    gap: 18px;
   }
 
   .skill-card {
@@ -38,15 +52,15 @@
     align-items: center;
     gap: 12px;
     padding: 16px 18px;
-    border-radius: 12px;
-   background: #f8f9fc; 
-    border: 1px solid #e6e9ef;
+    border-radius: 14px;
+    background: linear-gradient(180deg, var(--card-bg), var(--surface-strong));
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     cursor: pointer;
-
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     font-size: 0.95rem;
     font-weight: 500;
-    color: #34495e;
+    color: var(--text-color);
 
     mat-icon {
       font-size: 20px;
@@ -56,16 +70,14 @@
 
     &:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      border-color: var(--primary-color);
+      box-shadow: 0 20px 36px rgba(59, 130, 246, 0.15);
+      border-color: rgba(125, 211, 252, 0.72);
 
       mat-icon {
-        color: var(--primary-color);
+        color: #bfdbfe;
       }
     }
   }
-
-  /* Responsive adjustments */
 
   @media (max-width: 768px) {
     padding: 70px 15px;

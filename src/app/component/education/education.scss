@@ -1,38 +1,55 @@
 .education {
-  padding: 90px 20px;
-  border-bottom: 1px solid #e6e9ef;
+  padding: 20px 20px 50px;
 
   .container {
     max-width: 1100px;
     margin: auto;
   }
 
-  .section-title {
+  .section-heading {
     text-align: center;
-    font-size: 2.4rem;
+    margin-bottom: 30px;
+  }
+
+  .section-kicker {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #8cc7ff;
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 60px;
-    // color: #2c3e50;
+  }
+
+  .section-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.04em;
   }
 
   .education-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
 
   .education-card {
     position: relative;
     display: flex;
-    background: #f8f9fc;
-    border-radius: 14px;
+    background: linear-gradient(180deg, var(--card-bg), var(--surface-strong));
+    border-radius: 18px;
     padding: 25px 25px 25px 35px;
     transition: 0.3s ease;
-    border: 1px solid #e6e9ef;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 24px 48px rgba(59, 130, 246, 0.16);
+      border-color: rgba(125, 211, 252, 0.6);
     }
 
     .left-border {
@@ -41,9 +58,9 @@
       top: 0;
       bottom: 0;
       width: 6px;
-      background: var(--primary-color);
-      border-top-left-radius: 14px;
-      border-bottom-left-radius: 14px;
+      background: linear-gradient(180deg, #7dd3fc, #a78bfa, #f9a8d4);
+      border-top-left-radius: 18px;
+      border-bottom-left-radius: 18px;
     }
 
     .education-content {
@@ -54,51 +71,50 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
 
       h3 {
         font-size: 1.3rem;
         font-weight: 600;
         margin: 0;
-        color: #34495e;
+        color: var(--text-color);
       }
 
       .badge {
-        background: var(--primary-color);
-        color: #fff;
+        background: rgba(37, 99, 235, 0.08);
+        color: var(--primary-color);
         padding: 6px 12px;
         border-radius: 20px;
         font-size: 0.85rem;
-        font-weight: 500;
+        font-weight: 600;
+        border: 1px solid rgba(37, 99, 235, 0.18);
       }
     }
 
     .university {
       font-weight: 500;
-      color: #2c3e50;
-      margin-bottom: 5px;
+      color: var(--text-color);
+      margin-bottom: 6px;
     }
 
     .branch {
       font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 5px;
+      color: var(--muted-text);
+      margin-bottom: 6px;
     }
 
     .college {
       font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 8px;
+      color: var(--muted-text);
+      margin-bottom: 10px;
     }
 
     .duration {
-      font-size: 0.85rem;
-      color: #888;
-      font-weight: 500;
+      font-size: 0.82rem;
+      color: var(--primary-color);
+      font-weight: 600;
     }
   }
-
-  /* Responsive */
 
   @media (max-width: 768px) {
     padding: 70px 15px;

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LanguageService } from '../../service/language';
 
 interface ContactForm {
   fullName: FormControl<string>;
@@ -19,7 +20,10 @@ export class Contact {
 
   contactForm!: FormGroup<ContactForm>;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    public langService: LanguageService
+  ) {}
 
   ngOnInit() {
     this.contactForm = this.fb.group({
@@ -34,7 +38,7 @@ export class Contact {
   }
 
   submitForm() {
-    if (this.contactForm.valid) {  
+    if (this.contactForm.valid) {
       const formData = this.contactForm.value;
       const message = `Full Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.mobile}\nMessage: ${formData.message}`;
       const encodedMessage = encodeURIComponent(message);
@@ -44,4 +48,4 @@ export class Contact {
       console.log('Form is invalid');
     }
   }
-  }
+}

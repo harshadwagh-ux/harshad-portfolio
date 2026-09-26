@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LanguageService } from '../../service/language';
 
 interface Experience {
   role: string;
@@ -17,29 +18,84 @@ interface Experience {
 })
 export class Exp {
 
-  experiences: Experience[] = [
-    {
-      role: 'Senior Engineer – Angular Development',
-      company: 'RESERVE BANK INFORMATION TECHNOLOGY PRIVATE LIMITED',
-      location: 'Navi Mumbai, Maharashtra, India',
-      start: new Date('2025-12-01'),
-      end: null
-    },
-    {
-      role: 'Software Developer - Angular Frontend',
-      company: 'NETXCELL LTD.',
-      location: 'Mumbai, Maharashtra, India',
-      start: new Date('2025-07-01'),
-      end: new Date('2025-12-01')
-    },
-    {
-      role: 'System Engineer - Frontend Angular Developer',
-      company: 'TATA CONSULTANCY SERVICES PVT. LTD.',
-      location: 'Thane, Maharashtra, India',
-      start: new Date('2022-03-01'),
-      end: new Date('2025-07-01')
-    }
-  ];
+  constructor(public langService: LanguageService) {}
+
+  private readonly experienceData: Record<'en' | 'hi' | 'mr', Experience[]> = {
+    en: [
+      {
+        role: 'Senior Engineer – Angular Development',
+        company: 'RESERVE BANK INFORMATION TECHNOLOGY PRIVATE LIMITED',
+        location: 'Navi Mumbai, Maharashtra, India',
+        start: new Date('2025-12-01'),
+        end: null
+      },
+      {
+        role: 'Software Developer - Angular Frontend',
+        company: 'NETXCELL LTD.',
+        location: 'Mumbai, Maharashtra, India',
+        start: new Date('2025-07-01'),
+        end: new Date('2025-12-01')
+      },
+      {
+        role: 'System Engineer - Frontend Angular Developer',
+        company: 'TATA CONSULTANCY SERVICES PVT. LTD.',
+        location: 'Thane, Maharashtra, India',
+        start: new Date('2022-03-01'),
+        end: new Date('2025-07-01')
+      }
+    ],
+    hi: [
+      {
+        role: 'सीनियर इंजीनियर – Angular Development',
+        company: 'RESERVE BANK INFORMATION TECHNOLOGY PRIVATE LIMITED',
+        location: 'नवी मुंबई, महाराष्ट्र, भारत',
+        start: new Date('2025-12-01'),
+        end: null
+      },
+      {
+        role: 'सॉफ्टवेयर डेवलपर - Angular Frontend',
+        company: 'NETXCELL LTD.',
+        location: 'मुंबई, महाराष्ट्र, भारत',
+        start: new Date('2025-07-01'),
+        end: new Date('2025-12-01')
+      },
+      {
+        role: 'सिस्टम इंजीनियर - Frontend Angular Developer',
+        company: 'TATA CONSULTANCY SERVICES PVT. LTD.',
+        location: 'ठाणे, महाराष्ट्र, भारत',
+        start: new Date('2022-03-01'),
+        end: new Date('2025-07-01')
+      }
+    ],
+    mr: [
+      {
+        role: 'सिनियर इंजिनियर – Angular Development',
+        company: 'RESERVE BANK INFORMATION TECHNOLOGY PRIVATE LIMITED',
+        location: 'नवी मुंबई, महाराष्ट्र, भारत',
+        start: new Date('2025-12-01'),
+        end: null
+      },
+      {
+        role: 'सॉफ्टवेअर डेवलपर - Angular Frontend',
+        company: 'NETXCELL LTD.',
+        location: 'मुंबई, महाराष्ट्र, भारत',
+        start: new Date('2025-07-01'),
+        end: new Date('2025-12-01')
+      },
+      {
+        role: 'सिस्टम इंजिनियर - Frontend Angular Developer',
+        company: 'TATA CONSULTANCY SERVICES PVT. LTD.',
+        location: 'ठाणे, महाराष्ट्र, भारत',
+        start: new Date('2022-03-01'),
+        end: new Date('2025-07-01')
+      }
+    ]
+  };
+
+  get experiences(): Experience[] {
+    const lang = this.langService.getLanguage() as 'en' | 'hi' | 'mr';
+    return this.experienceData[lang];
+  }
 
  totalExperience: string = '';
   rbitExperience: string = '';

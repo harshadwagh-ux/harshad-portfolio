@@ -1,8 +1,10 @@
-<section class="contact">
+<section class="contact" *ngIf="langService.translations$ | async as t">
 
     <div class="container">
 
-        <h2 class="section-title">Contact Me</h2>
+        <div class="section-heading">
+            <h2 class="section-title">{{ t.contactTitle }}</h2>
+        </div>
 
         <div class="contact-grid">
 
@@ -10,18 +12,18 @@
             <div class="contact-info">
 
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/harshad-wagh-26473521a/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://www.instagram.com/_harshad_wagh7372/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="https://www.facebook.com/profile.php?id=100013189427859" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                    <a href="https://github.com/harshadwagh-ux" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/harshad-wagh-26473521a/" target="_blank"><i class="fab fa-linkedin"></i> {{ t.linkedin }}</a>
+                    <a href="https://www.instagram.com/_harshad_wagh7372/" target="_blank"><i class="fab fa-instagram"></i> {{ t.instagram }}</a>
+                    <a href="https://www.facebook.com/profile.php?id=100013189427859" target="_blank"><i class="fab fa-facebook"></i> {{ t.facebook }}</a>
+                    <a href="https://github.com/harshadwagh-ux" target="_blank"><i class="fab fa-github"></i> {{ t.github }}</a>
                 </div>
 
                 <div class="info-box">
-                    <p><strong>Location:</strong> NTPS Colony, Eklahare, Nashik, Maharashtra, India - 422105</p>
-                    <p><strong>Phone:</strong> +91 - 7057094091</p>
-                    <p><strong>Working Hours:</strong> Mon to Fri 9 AM to 6 PM</p>
-                    <p><strong>Email:</strong> harshadwagh535@gmail.com</p>
-                    <p class="highlight">Send me your query anytime!</p>
+                    <p><strong>{{ t.locationLabel }}</strong> NTPS Colony, Eklahare, Nashik, Maharashtra, India - 422105</p>
+                    <p><strong>{{ t.phoneLabel }}</strong> +91 - 7057094091</p>
+                    <p><strong>{{ t.workingHoursLabel }}</strong> Mon to Fri 9 AM to 6 PM</p>
+                    <p><strong>{{ t.emailLabel }}</strong> harshadwagh535@gmail.com</p>
+                    <p class="highlight">{{ t.sendQuery }}</p>
                 </div>
 
             </div>
@@ -31,31 +33,31 @@
 
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
 
-  <input formControlName="fullName" placeholder="Full Name" />
+  <input formControlName="fullName" [placeholder]="t.fullName" />
 
   @if (contactForm.controls.fullName.touched && contactForm.controls.fullName.invalid) {
-    <small class="error">Full name required</small>
+    <small class="error">{{ t.fullNameRequired }}</small>
   }
 
-  <input formControlName="email" placeholder="Email" />
+  <input formControlName="email" [placeholder]="t.emailPlaceholder" />
 
   @if (contactForm.controls.email.touched && contactForm.controls.email.invalid) {
-    <small class="error">Valid email required</small>
+    <small class="error">{{ t.validEmailRequired }}</small>
   }
 
-  <input formControlName="mobile" placeholder="Mobile Number" />
+  <input formControlName="mobile" [placeholder]="t.mobileNumber" />
 
   @if (contactForm.controls.mobile.touched && contactForm.controls.mobile.invalid) {
-    <small class="error">Valid mobile required</small>
+    <small class="error">{{ t.validMobileRequired }}</small>
   }
 
-  <textarea formControlName="message" rows="4" placeholder="Message"></textarea>
+  <textarea formControlName="message" rows="4" [placeholder]="t.message"></textarea>
 
   @if (contactForm.controls.message.touched && contactForm.controls.message.invalid) {
-    <small class="error">Minimum 10 characters</small>
+    <small class="error">{{ t.messageMinLength }}</small>
   }
 
-  <button [disabled]="contactForm.invalid">Send</button>
+  <button [disabled]="contactForm.invalid">{{ t.sendButton }}</button>
 
 </form>
 
@@ -67,8 +69,8 @@
 
     <!-- Footer Bottom -->
     <div class="footer-bottom">
-        Copyright ©2026 All rights reserved |
-        This template is made with ❤ by <strong>Harshad Wagh</strong>
+        {{ t.copyright }} |
+        {{ t.madeWith }} ❤ {{ t.madeBy }}
     </div>
 
 </section>

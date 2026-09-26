@@ -10,7 +10,8 @@ type Lang = 'en' | 'mr' | 'hi';
 })
 export class LanguageService {
 
-  private langSubject = new BehaviorSubject<Lang>('en');
+  private readonly LANGUAGE_KEY = 'app-language';
+  private langSubject = new BehaviorSubject<Lang>(this.getStoredLanguage());
   private translationSubject = new BehaviorSubject<Translation | null>(null);
 
   language$ = this.langSubject.asObservable();
@@ -20,8 +21,14 @@ export class LanguageService {
     this.loadTranslations(this.langSubject.value);
   }
 
+  private getStoredLanguage(): Lang {
+    const saved = localStorage.getItem(this.LANGUAGE_KEY) as Lang | null;
+    return saved === 'en' || saved === 'mr' || saved === 'hi' ? saved : 'en';
+  }
+
   setLanguage(lang: Lang) {
     if (lang === this.langSubject.value) return;
+    localStorage.setItem(this.LANGUAGE_KEY, lang);
     this.langSubject.next(lang);
     this.loadTranslations(lang);
   }

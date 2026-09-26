@@ -6,10 +6,11 @@ import { Exp } from "./component/exp/exp";
 import { Skills } from "./component/skills/skills";
 import { Education } from "./component/education/education";
 import { Contact } from "./component/contact/contact";
+import { Certificates } from './component/certificates/certificates';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Home, Exp, Skills, Education, Contact],
+  imports: [Header, Home, Exp, Skills, Education, Certificates, Contact],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

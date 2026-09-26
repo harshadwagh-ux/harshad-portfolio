@@ -7,11 +7,12 @@
     <a (click)="scrollTo('experience')">{{ t.experience }}</a>
     <a (click)="scrollTo('skills')">{{ t.skills }}</a>
     <a (click)="scrollTo('education')">{{ t.education }}</a>
-    <a href="https://harshad1702portfolio.netlify.app/" target="_blank">Old Portfolio</a>
+    <a (click)="scrollTo('certificates')">{{ t.certificatesTitle }}</a>
+    <a href="https://harshad1702portfolio.netlify.app/" target="_blank">{{ t.oldPortfolio }}</a>
     <a (click)="scrollTo('contact')">{{ t.contact }}</a>
   </nav>
   <div class="actions">
-    <!-- <div class="lang-wrapper">
+    <div class="lang-wrapper">
       <select
         class="lang-select"
         [value]="currentLang"
@@ -21,9 +22,9 @@
         <option value="mr">मराठी</option>
         <option value="hi">हिंदी</option>
       </select>
-    </div> -->
-    <button class="theme-toggle" (click)="toggleDarkMode()">
-      {{ themeService.isDarkMode() ? day : night }}
+    </div>
+    <button class="theme-toggle" (click)="toggleDarkMode()" *ngIf="langService.translations$ | async as t">
+      {{ themeService.isDarkMode() ? t.darkMode : t.lightMode }}
     </button>
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
   </div>
@@ -35,7 +36,8 @@
     <a (click)="scrollTo('experience')">{{ t.experience }}</a>
     <a (click)="scrollTo('skills')">{{ t.skills }}</a>
     <a (click)="scrollTo('education')">{{ t.education }}</a>
+    <a (click)="scrollTo('certificates')">{{ t.certificatesTitle }}</a>
     <a (click)="scrollTo('contact')">{{ t.contact }}</a>
-    <a href="https://harshad1702portfolio.netlify.app/" target="_blank">Old Portfolio</a>
+    <a href="https://harshad1702portfolio.netlify.app/" target="_blank">{{ t.oldPortfolio }}</a>
   </nav>
 }

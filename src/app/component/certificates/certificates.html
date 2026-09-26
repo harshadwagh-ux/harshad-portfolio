@@ -1,0 +1,25 @@
+<section class="certificates-section" *ngIf="langService.translations$ | async as t">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title">{{ t.certificatesTitle || certificateTitle }}</h2>
+    </div>
+
+    <div class="certificate-list">
+      <article class="certificate-item" *ngFor="let certificate of certificates">
+        <div class="certificate-topbar">
+          <span class="certificate-date">{{ certificate.date }}</span>
+          <a class="certificate-link" [href]="certificate.link" target="_blank" rel="noopener noreferrer">
+            {{ t.viewCertificate || viewCertificateLabel }}
+          </a>
+        </div>
+
+        <h3 class="certificate-name">{{ certificate.title }}</h3>
+
+        <div class="certificate-meta">
+          <span class="meta-label">{{ t.certificateIssuer || issuerLabel }}:</span>
+          <span>{{ certificate.issuer }}</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

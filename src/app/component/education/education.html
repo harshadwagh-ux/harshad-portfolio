@@ -1,7 +1,9 @@
-<section class="education">
+<section class="education" *ngIf="langService.translations$ | async as t">
   <div class="container">
 
-    <h2 class="section-title">Education</h2>
+    <div class="section-heading">
+      <h2 class="section-title">{{ t.educationTitle }}</h2>
+    </div>
 
     <div class="education-wrapper">
 
